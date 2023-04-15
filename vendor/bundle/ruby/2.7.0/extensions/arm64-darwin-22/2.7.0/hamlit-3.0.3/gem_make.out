@@ -1,0 +1,17 @@
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/hamlit-3.0.3/ext/hamlit
+/Users/kokuboriki/.rbenv/versions/2.7.7/bin/ruby -I /Users/kokuboriki/.rbenv/versions/2.7.7/lib/ruby/2.7.0 -r ./siteconf20230416-66186-1g4b2ip.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/hamlit-3.0.3/ext/hamlit
+make "DESTDIR=" clean
+
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/hamlit-3.0.3/ext/hamlit
+make "DESTDIR="
+compiling hamlit.c
+compiling hescape.c
+linking shared-object hamlit/hamlit.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/hamlit-3.0.3/ext/hamlit
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 hamlit.bundle ./.gem.20230416-66186-lza333/hamlit
