@@ -1,0 +1,16 @@
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+/Users/kokuboriki/.rbenv/versions/2.7.7/bin/ruby -I /Users/kokuboriki/.rbenv/versions/2.7.7/lib/ruby/2.7.0 -r ./siteconf20230416-40544-1do922x.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20230416-40544-qagwtl/bootsnap
