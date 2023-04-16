@@ -1,0 +1,16 @@
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+/Users/kokuboriki/.rbenv/versions/2.7.7/bin/ruby -I /Users/kokuboriki/.rbenv/versions/2.7.7/lib/ruby/2.7.0 -r ./siteconf20230416-68947-1qo8uq7.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20230416-68947-xfxj8u
