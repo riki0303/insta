@@ -1,0 +1,17 @@
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/haml-6.1.1/ext/haml
+/Users/kokuboriki/.rbenv/versions/2.7.7/bin/ruby -I /Users/kokuboriki/.rbenv/versions/2.7.7/lib/ruby/2.7.0 -r ./siteconf20230416-66186-ata8jq.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/haml-6.1.1/ext/haml
+make "DESTDIR=" clean
+
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/haml-6.1.1/ext/haml
+make "DESTDIR="
+compiling haml.c
+compiling hescape.c
+linking shared-object haml/haml.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/kokuboriki/insta/vendor/bundle/ruby/2.7.0/gems/haml-6.1.1/ext/haml
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 haml.bundle ./.gem.20230416-66186-17g604o/haml
