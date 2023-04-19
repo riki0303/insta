@@ -1,17 +1,21 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.form
+  .form__image-container
+    = image_tag 'login.png', class: 'form__image'
+  .container
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field.form__item
+        = f.label :email,class: 'form__item-name'
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form__input'
+      .field.form__item
+        = f.label :password, class: 'form__item-name'
+        %br/
+        = f.password_field :password, autocomplete: "current-password", class: 'form__input'
+      -# - if devise_mapping.rememberable?
+      -#   .field
+      -#     = f.check_box :remember_me
+      -#     = f.label :remember_me
+      .form__forgot
+        = link_to 'Forgot password?', new_user_password_path, class: 'form__item-name form__forgot-link'
+      .actions.form__btn
+        = f.submit "Login", class: 'form__btn-text'

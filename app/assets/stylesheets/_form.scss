@@ -1,0 +1,43 @@
+@import "variable";
+
+.form__image-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.form__image {
+  width: 100%;
+  height: auto;
+}
+.form__item {
+  margin-top: 20px;
+}
+
+.form__item-name {
+  font-size: $font-size-sm;
+  color: $color-gray;
+}
+
+.form__input {
+  width: 100%;
+  border-bottom: 1px solid $color-light-gray;
+  margin-top: 5px;
+}
+
+.form__btn {
+  background-color: $color-yellow;
+  margin-top: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 0px;
+}
+
+.form__btn-text {
+  font-weight: 500;
+  font-size: $font-size-md;
+}
+
+.form__forgot {
+  text-align: right;
+  margin-top: 15px;
+}
