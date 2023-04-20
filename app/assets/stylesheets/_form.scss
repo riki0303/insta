@@ -11,6 +11,9 @@
 .form__item {
   margin-top: 20px;
 }
+.form__item--right {
+  text-align: right;
+}
 
 .form__item-name {
   font-size: $font-size-sm;
@@ -35,9 +38,4 @@
 .form__btn-text {
   font-weight: 500;
   font-size: $font-size-md;
-}
-
-.form__forgot {
-  text-align: right;
-  margin-top: 15px;
 }
