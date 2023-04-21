@@ -1,0 +1,15 @@
+.form
+  .form__image-container
+    = image_tag 'login.png', class: 'form__image'
+  .container
+    %ul
+      - @profile.errors.full_messages.each do |message|
+        %li= message
+    = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+      .field.form__item
+        = f.label :avatar, 'avatar',class: 'form__item-name'
+        %br/
+        = f.file_field :avatar
+        %br/
+        .form__btn
+          = f.submit "submit", class: 'form__btn-text'
