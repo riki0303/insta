@@ -1,4 +1,7 @@
 profile
 
 %div
-  = image_tag @profile.avatar
+  - if @profile&.avatar&.attached?
+    = image_tag @profile.avatar
+  - else
+    = image_tag 'default-avatar.png'
