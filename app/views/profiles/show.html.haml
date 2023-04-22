@@ -1,4 +1,10 @@
 profile
+%p
+  name:
+  = @profile.name
+%p 
+  account:
+  = current_user.account
 
 %div
   - if @profile&.avatar&.attached?

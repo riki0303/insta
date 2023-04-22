@@ -3,6 +3,7 @@
 # Table name: profiles
 #
 #  id         :bigint           not null, primary key
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :bigint           not null
@@ -14,4 +15,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
   has_one_attached :avatar
+
+  validates :name, presence: true
 end
