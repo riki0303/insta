@@ -1,0 +1,54 @@
+@import "variable";
+
+.profile {
+  margin-top: 45px;
+}
+
+.profile__name {
+  text-align: center;
+}
+
+.profile__account {
+  text-align: center;
+  margin-top: 3px;
+  font-size: $font-size-sm;
+  color: $color-gray;
+}
+
+.profile__my-image {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #e91e63;
+  padding: 3px;
+}
+
+.profile__my-image-container {
+  text-align: center;
+  margin-top: 35px;
+}
+.profile__parameter-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 45px;
+}
+.profile__parameter-number {
+  text-align: center;
+}
+.profile__parameter-name {
+  text-align: center;
+  font-size: $font-size-md;
+  color: $color-light-gray;
+}
+
+.profile__post-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 42px;
+  gap: 8px;
+}
+
+.profile__post {
+  width: 100%;
+  height: 100%;
+}

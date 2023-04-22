@@ -17,12 +17,14 @@
 @import "variable";
 @import "form";
 @import "flash";
+@import "profile";
 
 body {
   font-weight: normal;
   line-height: 1.5;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  color: $color-black;
 }
 
 img {

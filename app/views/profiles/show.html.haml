@@ -1,13 +1,33 @@
-profile
-%p
-  name:
-  = @profile.name
-%p 
-  account:
-  = current_user.account
+.container.container--mt
+  %p.profile__name
+    = @profile.name
+  %p.profile__account
+    (#{current_user.account})
+  .profile__my-image-container
+    - if @profile&.avatar&.attached?
+      = image_tag @profile.avatar, class: 'profile__my-image'
+    - else
+      = image_tag 'default-avatar.png'
 
-%div
-  - if @profile&.avatar&.attached?
-    = image_tag @profile.avatar
-  - else
-    = image_tag 'default-avatar.png'
+  .profile__parameter-container
+    .profile__parameter
+      .profile__parameter-number 44
+      %p.profile__parameter-name Posts
+    .profile__parameter
+      .profile__parameter-number 110
+      %p.profile__parameter-name Followers
+    .profile__parameter
+      .profile__parameter-number 44
+      %p.profile__parameter-name Following
+  
+  .profile__post-container
+    = image_tag 'post-1.png' , class: 'profile__post'
+    = image_tag 'post-2.png' , class: 'profile__post'
+    = image_tag 'post-3.png' , class: 'profile__post'
+    = image_tag 'post-1.png' , class: 'profile__post'
+    = image_tag 'post-2.png' , class: 'profile__post'
+    = image_tag 'post-3.png' , class: 'profile__post'
+
+
+
+
