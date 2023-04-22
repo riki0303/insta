@@ -21,12 +21,17 @@
   height: 80px;
   border: 1px solid #e91e63;
   padding: 3px;
+  text-align: center;
 }
 
 .profile__my-image-container {
   text-align: center;
   margin-top: 35px;
 }
+.profile__link {
+  font-size: $font-size-md;
+}
+
 .profile__parameter-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
