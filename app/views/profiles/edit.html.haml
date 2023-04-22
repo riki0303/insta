@@ -7,9 +7,13 @@
         %li= message
     = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
       .field.form__item
-        = f.label :avatar, 'avatar',class: 'form__item-name'
+        = f.label :name,class: 'form__item-name'
         %br/
-        = f.file_field :avatar
+        = f.text_field :name, autofocus: true, autocomplete: "account", class: 'form__input'
+      .field.form__item
+        = f.label :avatar, 'avatar', class: 'form__item-name'
         %br/
-        .form__btn
-          = f.submit "submit", class: 'form__btn-text'
+        = f.file_field :avatar, class: 'form__input'
+        %br/
+      .form__btn
+        = f.submit "submit", class: 'form__btn-text'
