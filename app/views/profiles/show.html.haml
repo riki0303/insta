@@ -10,6 +10,8 @@
       = image_tag @profile.avatar, class: 'profile__my-image'
     - else
       = image_tag 'default-avatar.png'
+    %div
+      = link_to 'edit?', edit_profile_path, class: 'profile__link'
 
   .profile__parameter-container
     .profile__parameter
