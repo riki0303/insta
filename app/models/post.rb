@@ -13,5 +13,6 @@
 #  index_posts_on_user_id  (user_id)
 #
 class Post < ApplicationRecord
-
+  belongs_to :user
+  has_many_attached :images
 end
