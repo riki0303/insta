@@ -1,0 +1,7 @@
+post一覧
+
+- @posts.each do |post|
+  %h2
+    = post.title
+  - post.eyecatches.each do |eyecatch|
+    = image_tag eyecatch
