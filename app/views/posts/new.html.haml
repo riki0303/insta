@@ -1,16 +1,28 @@
-.container
+.container.form
   %ul
     - @post.errors.full_messages.each do |message|
       %li= message
+
   = form_with(model: @post, url: posts_path,local: true) do |f|
+    .head
+      .head__item
+        = link_to 'Cance', posts_path, class: 'head__link head__link--blue'
+      .head__item
+        %h2.head__title
+          Status
+      .head__item
+        = f.submit "post", class: 'head__link'
+    
+    .form__profile
+      .form__profile-avater
+        = image_tag current_user.profile.avatar
+      .form__profile-account
+        = current_user.profile.name
+
+    -# 以下入力欄
     .field.form__item
-      = f.label :title,class: 'form__item-name'
-      %br/
-      = f.text_field :title, autofocus: true, autocomplete: "account", class: 'form__input'
+      = f.text_field :title, autocomplete: "account", :placeholder => "What's on your mind ?", class: 'form__input form__placeholder'
     .field.form__item
-      = f.label :eyecatches, 'image', class: 'form__item-name'
-      %br/
-      = f.file_field :eyecatches, multiple: true, class: 'form__input'
-      %br/
-    .form__btn
-      = f.submit "post", class: 'form__btn-text'
+      .form__file-btn
+        %p + Alubum
+        = f.file_field :eyecatches, multiple: true

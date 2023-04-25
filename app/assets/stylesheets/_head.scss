@@ -2,8 +2,18 @@
 
 .head {
   margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.head__link {
+  color: $color-light-gray;
 }
 
 .head__link--blue {
   color: $color-blue;
+}
+
+.head__title {
+  font-size: 16px;
 }
