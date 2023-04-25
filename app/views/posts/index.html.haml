@@ -4,13 +4,14 @@
 
   - @posts.each do |post|
     .post__item
-      .post__item-head
-        = image_tag post.user.profile.avatar, class: 'post__avatar'
-        .post__item-text-container
-          %p.post__account
-            = post.user.account
-          %p.post__created_at
-            = I18n.l(post.created_at, format: :default)
+      = link_to profile_path do
+        .post__item-head
+          = image_tag post.user.profile.avatar, class: 'post__avatar'
+          .post__item-text-container
+            %p.post__account
+              = post.user.account
+            %p.post__created_at
+              = I18n.l(post.created_at, format: :default)
       - post.eyecatches.each do |eyecatch|
         .post__eyecatch-container
           = image_tag eyecatch, class: 'post__eyecatch'
