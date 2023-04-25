@@ -1,7 +1,14 @@
-post一覧
+.container.post
+  .head
+    = link_to'New Post', new_post_path, class: 'head__link head__link--blue'
 
-- @posts.each do |post|
-  %h2
-    = post.title
-  - post.eyecatches.each do |eyecatch|
-    = image_tag eyecatch
+  - @posts.each do |post|
+    = image_tag post.user.profile.avatar
+    %p
+      = post.user.account
+    %p
+      = post.created_at
+    - post.eyecatches.each do |eyecatch|
+      = image_tag eyecatch
+    %p
+      = post.title
