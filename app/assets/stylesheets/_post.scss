@@ -1,4 +1,47 @@
 @import "variable";
 
+.post__item {
+  margin-top: 40px;
+}
+.post__item-head {
+  display: flex;
+}
 
+.post__avatar {
+  width: 30px;
+  height: 30px;
+}
+.post__item-text-container {
+  margin-left: 8px;
+}
 
+.post__account {
+  font-size: $font-size-md;
+  font-weight: $font-weight-md;
+}
+
+.post__created_at {
+  font-size: $font-size-sm;
+  color: $color-light-gray;
+}
+
+.post__eyecatch-container {
+  margin-top: 11px;
+}
+
+.post__btn-container {
+  margin-top: 12px;
+  display: flex;
+  gap: 15px;
+}
+
+.post__btn-comment {
+  display: block;
+  margin-top: 2px;
+}
+
+.post__title {
+  margin-top: 5px;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-md;
+}

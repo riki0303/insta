@@ -3,16 +3,20 @@
     = link_to 'New Post', new_post_path, class: 'head__link head__link--blue'
 
   - @posts.each do |post|
-    = image_tag post.user.profile.avatar
-    %p
-      = post.user.account
-    %p
-      = I18n.l(post.created_at, format: :default)
-    - post.eyecatches.each do |eyecatch|
-      = image_tag eyecatch
-    .post__btn-container
-      = image_tag 'unlike.png'
-      = image_tag 'comment.png'
-      = link_to image_tag('sshare.png'), 'https://twitter.com/share?'
-    %p
-      = post.title
+    .post__item
+      .post__item-head
+        = image_tag post.user.profile.avatar, class: 'post__avatar'
+        .post__item-text-container
+          %p.post__account
+            = post.user.account
+          %p.post__created_at
+            = I18n.l(post.created_at, format: :default)
+      - post.eyecatches.each do |eyecatch|
+        .post__eyecatch-container
+          = image_tag eyecatch
+      .post__btn-container
+        = link_to image_tag 'unlike.png'
+        = link_to image_tag 'comment.png', class: 'post__btn-comment'
+        = link_to image_tag('share.png'), 'https://twitter.com/share?'
+      %p.post__title
+        = post.title
