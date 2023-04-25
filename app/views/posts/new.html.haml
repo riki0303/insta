@@ -1,0 +1,16 @@
+.container
+  %ul
+    - @post.errors.full_messages.each do |message|
+      %li= message
+  = form_with(model: @post, url: posts_path,local: true) do |f|
+    .field.form__item
+      = f.label :title,class: 'form__item-name'
+      %br/
+      = f.text_field :title, autofocus: true, autocomplete: "account", class: 'form__input'
+    .field.form__item
+      = f.label :eyecatches, 'image', class: 'form__item-name'
+      %br/
+      = f.file_field :eyecatches, multiple: true, class: 'form__input'
+      %br/
+    .form__btn
+      = f.submit "post", class: 'form__btn-text'
