@@ -29,6 +29,12 @@
   margin-top: 11px;
 }
 
+.post__eyecatch {
+  width: 380px;
+  height: 225px;
+  object-fit: cover;
+}
+
 .post__btn-container {
   margin-top: 12px;
   display: flex;
@@ -39,4 +45,3 @@
   display: block;
   margin-top: 2px;
 }
-
