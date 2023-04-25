@@ -7,7 +7,7 @@
     %p
       = post.user.account
     %p
-      = post.created_at
+      = I18n.l(post.created_at, format: :default)
     - post.eyecatches.each do |eyecatch|
       = image_tag eyecatch
     %p
