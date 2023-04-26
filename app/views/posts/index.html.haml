@@ -15,9 +15,15 @@
       - post.eyecatches.each do |eyecatch|
         .post__eyecatch-container
           = image_tag eyecatch, class: 'post__eyecatch'
-      .post__btn-container
-        = link_to image_tag 'unlike.png'
-        = link_to image_tag 'comment.png', class: 'post__btn-comment'
-        = link_to image_tag('share.png'), 'https://twitter.com/share?'
+      - if user_signed_in?
+        .post__btn-container
+          - if current_user.has_liked?(post)
+            = link_to post_like_path(post), method: post do
+              = image_tag 'like.png'
+          - else
+            = link_to post_like_path(post), method: post do
+              = image_tag 'un-like.png'
+          = link_to image_tag 'comment.png', class: 'post__btn-comment'
+          = link_to image_tag('share.png'), 'https://twitter.com/share?'
       %p.post__title
         = post.title

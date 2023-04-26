@@ -8,8 +8,8 @@
         = @profile.name
       %p.profile__account
         (#{current_user.account})
-    -# 以下空タグ
-    .head__item
+    .head__item.head__item--right
+      = link_to 'Logout', destroy_user_session_path
 
   .profile__my-image-container
     - if @profile&.avatar&.attached?
