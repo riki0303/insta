@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   def index
     @posts = Post.all
   end
+
+
+  # def show
+  #   @post = Post.find(params[:id])
+  # end
 
   def new
     @post = current_user.posts.build
@@ -16,6 +22,12 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+  # def destroy
+  #   post = current_user.posts.find(params[:id])
+  #   post.destroy!
+  #   redirect_to root_path, notice: '削除に成功しました'
+  # end
 
   private
   def post_params

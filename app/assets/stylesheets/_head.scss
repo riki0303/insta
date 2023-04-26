@@ -6,12 +6,24 @@
   justify-content: space-between;
 }
 
+.head__item {
+  flex: 1;
+}
+
+.head__item--right {
+  text-align: right;
+}
+
 .head__link {
   color: $color-light-gray;
 }
 
 .head__link--blue {
   color: $color-blue;
+}
+
+.head__link--right {
+  text-align: right;
 }
 
 .head__title {
