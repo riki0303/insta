@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_user!, only: [:show,:edit, :update]
+  before_action :authenticate_user!, only: %i[show edit update]
   def show
     @profile = current_user.profile
   end
@@ -20,7 +20,8 @@ class ProfilesController < ApplicationController
   end
 
   private
+
   def profile_params
-    params.require(:profile).permit(:name,:avatar)
+    params.require(:profile).permit(:name, :avatar)
   end
 end
