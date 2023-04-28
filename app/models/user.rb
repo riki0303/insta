@@ -31,5 +31,4 @@ class User < ApplicationRecord
   def has_liked?(post)
     likes.exists?(post_id: post.id)
   end
-
 end

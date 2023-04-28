@@ -10,6 +10,10 @@
   flex: 1;
 }
 
+.head__title {
+  text-align: center;
+}
+
 .head__item--right {
   text-align: right;
 }
@@ -17,6 +21,8 @@
 .head__link {
   color: $color-light-gray;
 }
+
+
 
 .head__link--blue {
   color: $color-blue;
