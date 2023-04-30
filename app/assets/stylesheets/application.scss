@@ -20,8 +20,8 @@
 @import "profile";
 @import "arrow";
 @import "post";
-
-body {
+@import "comment";
+ body {
   font-weight: normal;
   line-height: 1.5;
   box-sizing: border-box;
