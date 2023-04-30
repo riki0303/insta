@@ -28,6 +28,6 @@
 
   = form_with(model: @comment, url: post_comments_path(@comment.post), local: true) do |f|
     %div
-      = f.text_area :content, class: 'form__input'
+      = f.text_area :content, class: 'form__textarea'
       .form__btn
         = f.submit "CREATE COMMENT", class: 'form__btn-text'
