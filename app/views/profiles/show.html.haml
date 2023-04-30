@@ -5,7 +5,7 @@
         %span.arrow-left
     .head__item
       %p.profile__name
-        = @profile.name
+        = @profile&.name
       %p.profile__account
         (#{current_user.account})
     .head__item.head__item--right
