@@ -1,0 +1,26 @@
+@import "variable";
+
+.comment {
+  .comment__item:first-of-type {
+    margin-top: 50px;
+  }
+}
+
+.comment__item {
+  margin-top: 32px;
+  display: flex;
+  gap: 14px;
+}
+
+.comment__avatar {
+  width: 32px;
+  height: 32px;
+}
+.comment__account {
+  color: $color-black;
+}
+
+.comment__content {
+  font-size: $font-size-md;
+  color: $color-light-gray;
+}
