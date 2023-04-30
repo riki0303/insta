@@ -1,7 +1,10 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build
+    @comment.user_id = current_user.id
     # コメント一覧表示用
     @comments = @post.comments
   end
@@ -9,6 +12,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
+    @comment.user_id = current_user.id
      # render :newの後のコメント一覧表示用
     @comments = @post.comments
     if @comment.save

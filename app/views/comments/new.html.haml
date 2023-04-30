@@ -18,10 +18,10 @@
         .comment__item
           .comment__left
             = link_to profile_path do
-              = image_tag comment.post.user.avatar_image, class: 'comment__avatar'
+              = image_tag comment.user.avatar_image, class: 'comment__avatar'
           .comment__right
             = link_to profile_path, class: 'comment__account' do
-              = comment.post.user.account
+              = comment.user.account
             %p.comment__content
               = comment.content
 

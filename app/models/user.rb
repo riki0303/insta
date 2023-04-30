@@ -27,6 +27,7 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def has_liked?(post)
     likes.exists?(post_id: post.id)
@@ -36,7 +37,7 @@ class User < ApplicationRecord
     if profile&.avatar&.attached?
       profile.avatar
     else
-      default-avatar.png
+      'default-avatar.png'
     end
   end
 end
