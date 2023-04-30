@@ -1,0 +1,25 @@
+.post__item
+  = link_to profile_path do
+    .post__item-head
+      = image_tag post.user.avatar_image, class: 'post__avatar'
+      .post__item-text-container
+        %p.post__account
+          = post.user.account
+        %p.post__created_at
+          = I18n.l(post.created_at, format: :default)
+  - post.eyecatches.each do |eyecatch|
+    .post__eyecatch-container
+      = image_tag eyecatch, class: 'post__eyecatch'
+  - if user_signed_in?
+    .post__btn-container
+      - if current_user.has_liked?(post)
+        = link_to post_like_path(post), data: { method: 'delete' } do
+          = image_tag 'like.png'
+      - else
+        = link_to post_like_path(post), data: { method: 'post' } do
+          = image_tag 'un-like.png'
+      = link_to new_post_comment_path(post), class: 'post__btn-comment' do
+        = image_tag 'comment.png'
+      = link_to image_tag('share.png'), 'https://twitter.com/share?'
+  %p.post__title
+    = post.title
