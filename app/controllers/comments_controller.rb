@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
      # render :newの後のコメント一覧表示用
     @comments = @post.comments
     if @comment.save
-      redirect_to root_path, notice: 'Success!'
+      redirect_to new_post_comment_path(@post), notice: 'Success!'
     else
       flash.now[:error] = 'Failure!'
       render :new
