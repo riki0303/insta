@@ -11,13 +11,13 @@
         %h2.head__title
           Status
       .head__item.head__item--right
-        = f.submit "post", class: 'head__link'
+        = f.submit "Post", class: 'head__link'
     
     .form__profile
       .form__profile-avater
         = image_tag current_user.avatar_image
       .form__profile-account
-        = current_user.profile.name
+        = current_user.account
 
     -# 以下入力欄
     .field.form__item
