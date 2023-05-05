@@ -1,5 +1,5 @@
 .post__item
-  = link_to profile_path do
+  = link_to account_path(post.user) do
     .post__item-head
       = image_tag post.user.avatar_image, class: 'post__avatar'
       .post__item-text-container
