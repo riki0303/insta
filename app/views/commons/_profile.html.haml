@@ -8,13 +8,16 @@
         = user.profile.name
       %p.profile__account
         = user.account
-    
     .head__item.head__item--right
-      = link_to 'Logout', destroy_user_session_path
+      - if user== current_user
+        = link_to 'Logout', destroy_user_session_path
+      - else
+        = link_to 'Follow', '#'
   .profile__my-image-container
     = image_tag user.avatar_image, class: 'profile__my-image'
-    %div
-      = link_to 'edit?', edit_profile_path, class: 'profile__link'
+    - if user== current_user
+      %div
+        = link_to 'edit?', edit_profile_path, class: 'profile__link'
   .profile__parameter-container
     .profile__parameter
       .profile__parameter-number 44
