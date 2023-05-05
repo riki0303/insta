@@ -29,6 +29,14 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  # 中間テーブルとの関係（自分が相手をフォローする時）
+  has_many :following_relationsips, foreign_key: 'follower_id', class_name: 'Relationship' , dependent: :destroy
+  # 中間テーブルをまたいでfollowingを取得
+  has_many :followings, through: :following_relationsips, source: :following
+
+  has_many :follower_relationtips, foreign_key: 'following_id', class_name: 'Relationship', dependent: :destroy
+  has_many :followers, through: :follower_relationtips, source: :follower
+
   def has_liked?(post)
     likes.exists?(post_id: post.id)
   end
@@ -39,5 +47,14 @@ class User < ApplicationRecord
     else
       'default-avatar.png'
     end
+  end
+
+  def follow!(user)
+    following_relationsips.create!(following_id: user.id)
+  end
+
+  def unfollow!(user)
+    relation = following_relationsips.find_by!(following_id: user.id)
+    relation.destroy!
   end
 end

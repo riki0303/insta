@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile
   end
 
+  # def newなくてもeditで2つの役割
   def edit
     @profile = current_user.profile || current_user.build_profile
   end
