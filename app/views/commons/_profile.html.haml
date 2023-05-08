@@ -23,13 +23,16 @@
         = link_to 'edit?', edit_profile_path, class: 'profile__link'
   .profile__parameter-container
     .profile__parameter
-      .profile__parameter-number 44
+      .profile__parameter-number
+        = user.posts.count
       %p.profile__parameter-name Posts
     .profile__parameter
-      .profile__parameter-number 110
+      .profile__parameter-number
+        = user.follower_relationships.count
       %p.profile__parameter-name Followers
     .profile__parameter
-      .profile__parameter-number 44
+      .profile__parameter-number
+        = user.following_relationships.count
       %p.profile__parameter-name Following
 
   .profile__post-container
