@@ -1,0 +1,19 @@
+.container
+  .head
+    .head__item
+      = link_to :back do
+        %span.arrow-left
+    .head__item
+      %h2.head__title
+        Followers
+    .head__item.head__item--right
+
+  .follow
+    - @followings.each do |following|
+      .follow__item
+        .follow__left
+          = link_to account_path(following.id) do
+            = image_tag following.avatar_image, class: 'follow__avatar'
+        .follow__right
+          = link_to account_path(following.id), class: 'follow__account' do
+            = following.account

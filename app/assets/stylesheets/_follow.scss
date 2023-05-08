@@ -4,23 +4,24 @@
   .follow__item:first-of-type {
     margin-top: 50px;
   }
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 30px;
 }
 
 .follow__item {
   margin-top: 32px;
   display: flex;
-  gap: 14px;
+  gap: 20px;
+}
+
+.follow__right {
+  align-self: center;
 }
 
 .follow__avatar {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
 }
 .follow__account {
   color: $color-black;
-}
-
-.follow__content {
-  font-size: $font-size-md;
-  color: $color-light-gray;
 }
