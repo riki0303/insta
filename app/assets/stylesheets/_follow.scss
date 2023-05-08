@@ -1,0 +1,26 @@
+@import "variable";
+
+.follow {
+  .follow__item:first-of-type {
+    margin-top: 50px;
+  }
+}
+
+.follow__item {
+  margin-top: 32px;
+  display: flex;
+  gap: 14px;
+}
+
+.follow__avatar {
+  width: 32px;
+  height: 32px;
+}
+.follow__account {
+  color: $color-black;
+}
+
+.follow__content {
+  font-size: $font-size-md;
+  color: $color-light-gray;
+}
