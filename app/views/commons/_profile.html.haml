@@ -23,14 +23,19 @@
         = link_to 'edit?', edit_profile_path, class: 'profile__link'
   .profile__parameter-container
     .profile__parameter
-      .profile__parameter-number 44
+      .profile__parameter-number
+        = user.posts.count
       %p.profile__parameter-name Posts
-    .profile__parameter
-      .profile__parameter-number 110
-      %p.profile__parameter-name Followers
-    .profile__parameter
-      .profile__parameter-number 44
-      %p.profile__parameter-name Following
+    = link_to account_followers_path(user) do
+      .profile__parameter
+        .profile__parameter-number.profile__parameter-number--black
+          = user.follower_relationships.count
+        %p.profile__parameter-name Followers
+    = link_to account_followings_path(user) do
+      .profile__parameter
+        .profile__parameter-number.profile__parameter-number--black
+          = user.following_relationships.count
+        %p.profile__parameter-name Following
 
   .profile__post-container
     = image_tag 'post-1.png' , class: 'profile__post'

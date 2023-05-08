@@ -1,0 +1,9 @@
+.follow
+  - follows.each do |follow|
+    .follow__item
+      .follow__left
+        = link_to account_path(follow.id) do
+          = image_tag follow.avatar_image, class: 'follow__avatar'
+      .follow__right
+        = link_to account_path(follow.id), class: 'follow__account' do
+          = follow.account
