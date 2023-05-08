@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
-     # render :newの後のコメント一覧表示用
+    # render :newの後のコメント一覧表示用
     @comments = @post.comments
     if @comment.save
       redirect_to new_post_comment_path(@post), notice: 'Success!'

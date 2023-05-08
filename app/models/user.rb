@@ -30,7 +30,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   # 中間テーブルとの関係（自分が相手をフォローする時）
-  has_many :following_relationships, foreign_key: 'follower_id', class_name: 'Relationship' , dependent: :destroy
+  has_many :following_relationships, foreign_key: 'follower_id', class_name: 'Relationship', dependent: :destroy
   # 中間テーブルをまたいでfollowingを取得
   has_many :followings, through: :following_relationships, source: :following
 
@@ -60,12 +60,13 @@ class User < ApplicationRecord
     relation.destroy!
   end
 
-   def has_followed?(user)
+  def has_followed?(user)
     following_relationships.exists?(following_id: user.id)
   end
 
   # 以下はuserインスタンスから呼び出せない
   private
+
   def get_user_id(user)
     if user.is_a?(User)
       user.id
