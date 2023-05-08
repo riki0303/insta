@@ -2,6 +2,9 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
   def show
     @profile = current_user.profile
+
+    @posts = current_user.posts.all
+    
   end
 
   # def newなくてもeditで2つの役割
