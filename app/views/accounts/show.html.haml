@@ -1,1 +1,1 @@
-= render 'commons/profile', user: @user
+= render partial: 'commons/profile', locals: { user: @user, posts: @posts }
