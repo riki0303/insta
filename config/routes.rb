@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root to: 'posts#index'
 
+  resource :timeline, only: %i[show]
+
   resources :posts do
     resource :like, only: %i[create destroy]
     resources :comments, only: %i[new create destroy]
@@ -17,4 +19,5 @@ Rails.application.routes.draw do
     resources :followers, only: %i[index]
     resources :followings, only: %i[index]
   end
+
 end

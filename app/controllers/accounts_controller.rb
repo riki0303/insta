@@ -5,6 +5,6 @@ class AccountsController < ApplicationController
     return unless @user == current_user
     redirect_to profile_path
 
-    
+
   end
 end
