@@ -19,5 +19,4 @@ Rails.application.routes.draw do
     resources :followers, only: %i[index]
     resources :followings, only: %i[index]
   end
-
 end
