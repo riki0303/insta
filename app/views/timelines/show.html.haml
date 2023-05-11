@@ -8,3 +8,10 @@
   - @posts.each do |post|
     = render 'commons/posts', post: post
 
+  %br/
+  %h2 Many liked posts
+
+  - @like_posts.each do |like_post|
+    = render 'like_posts', post: like_post
+
+

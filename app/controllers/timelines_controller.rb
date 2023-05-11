@@ -6,5 +6,8 @@ class TimelinesController < ApplicationController
     user_ids = current_user.followings.pluck(:id)
     # idを含むpostを降順(DESC)で表示
     @posts = Post.where(user_id: user_ids).order(created_at: :desc)
+
+    @like_posts = Post.left_joins(:likes).where('posts.created_at >= ?', 24.hours
+      .ago).group(:id).order('COUNT(likes.id) DESC').limit(3)
   end
 end
