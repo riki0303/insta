@@ -7,6 +7,7 @@ class TimelinesController < ApplicationController
     # idを含むpostを降順(DESC)で表示
     @posts = Post.where(user_id: user_ids).order(created_at: :desc)
 
+    # 24時間以内の記事でいいねが多い順に3つ取得
     @like_posts = Post.left_joins(:likes).where('posts.created_at >= ?', 24.hours
       .ago).group(:id).order('COUNT(likes.id) DESC').limit(3)
   end
