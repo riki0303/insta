@@ -18,7 +18,7 @@ require("channels");
 import $ from "jquery";
 import axios from "axios";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbolinks:load", () => {
   $(".post__title").on("click", () => {
     axios.get("/").then((response) => {
       console.log(response);
