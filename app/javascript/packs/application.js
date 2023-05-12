@@ -14,3 +14,14 @@ require("channels");
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import $ from "jquery";
+import axios from "axios";
+
+document.addEventListener("turbolinks:load", () => {
+  $(".post__title").on("click", () => {
+    axios.get("/").then((response) => {
+      console.log(response);
+    });
+  });
+});
