@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resource :timeline, only: %i[show]
 
   resources :posts do
-    resource :like, only: %i[create destroy]
+    resource :like, only: %i[show create destroy]
     resources :comments, only: %i[new create destroy]
   end
 
