@@ -21,7 +21,7 @@ import axios from "axios";
 document.addEventListener("turbolinks:load", () => {
   const dataset = $("#post-show").data();
   const postId = dataset.postId;
-  axios.get("/posts/${postId}/like").then((response) => {
+  axios.get(`/posts/${postId}/like`).then((response) => {
     console.log(response);
   });
 });
