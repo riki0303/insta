@@ -21,7 +21,9 @@
 @import "arrow";
 @import "post";
 @import "comment";
- body {
+@import "animate";
+
+body {
   font-weight: normal;
   line-height: 1.5;
   box-sizing: border-box;
@@ -41,4 +43,8 @@ a {
 
 a:hover {
   opacity: 0.7;
+}
+
+.hidden {
+  display: none;
 }

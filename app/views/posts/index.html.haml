@@ -6,4 +6,7 @@
       = link_to 'Time Line', timeline_path, class: 'head__link--blue'
 
   - @posts.each do |post|
-    = render 'commons/posts', post: post
+    .post#post-show{ data: {post_id: post.id} }
+      = render 'commons/posts', post: post
+
+= javascript_pack_tag 'post'
