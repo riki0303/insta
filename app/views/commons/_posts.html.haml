@@ -12,9 +12,9 @@
       = image_tag eyecatch, class: 'post__eyecatch'
   - if user_signed_in?
     .post__btn-container
-      = link_to post_like_path(post), class: 'hidden like-active', data: { method: 'delete' } do
+      .like-active.hidden
         = image_tag 'like.png'
-      = link_to post_like_path(post), class: 'hidden like-inactive', data: { method: 'post' } do
+      .like-inactive.hidden
         = image_tag 'un-like.png'
       = link_to new_post_comment_path(post), class: 'post__btn-comment' do
         = image_tag 'comment.png'
