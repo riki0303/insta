@@ -41,8 +41,10 @@ document.addEventListener("turbolinks:load", () => {
     axios
       .post(`/posts/${postId}/like`)
       .then((response) => {
-        window.alert("OK!!");
-        console.log(response);
+        if (response.data.status === "ok") {
+          $(".like-active").removeClass("hidden");
+          $(".like-inactive").addClass("hidden");
+        }
       })
       .catch((e) => {
         window.alert("error!!!");
@@ -54,8 +56,10 @@ document.addEventListener("turbolinks:load", () => {
     axios
       .delete(`/posts/${postId}/like`)
       .then((response) => {
-        window.alert("OK!!");
-        console.log(response);
+        if (response.data.status === "ok") {
+          $(".like-active").addClass("hidden");
+          $(".like-inactive").removeClass("hidden");
+        }
       })
       .catch((e) => {
         window.alert("error!!!");
