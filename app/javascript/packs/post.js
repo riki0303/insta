@@ -12,7 +12,7 @@ const handleLikeDisplay = (hasLiked) => {
   }
 };
 
-document.addEventListener("turbolinks:load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const dataset = $("#post-show").data();
   const postId = dataset.postId;
   axios.get(`/posts/${postId}/like`).then((response) => {
