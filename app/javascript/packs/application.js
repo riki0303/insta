@@ -18,10 +18,19 @@ require("channels");
 import $ from "jquery";
 import axios from "axios";
 
+const handleLikeDisplay = (hasLiked) => {
+  if (hasLiked) {
+    $(".like-active").removeClass("hidden");
+  } else {
+    $(".like-inactive").removeClass("hidden");
+  }
+};
+
 document.addEventListener("turbolinks:load", () => {
   const dataset = $("#post-show").data();
   const postId = dataset.postId;
   axios.get(`/posts/${postId}/like`).then((response) => {
-    console.log(response);
+    const hasLiked = response.data.hasLiked;
+    handleLikeDisplay(hasLiked);
   });
 });

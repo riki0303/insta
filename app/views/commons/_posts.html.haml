@@ -12,12 +12,10 @@
       = image_tag eyecatch, class: 'post__eyecatch'
   - if user_signed_in?
     .post__btn-container
-      - if current_user.has_liked?(post)
-        = link_to post_like_path(post), data: { method: 'delete' } do
-          = image_tag 'like.png'
-      - else
-        = link_to post_like_path(post), data: { method: 'post' } do
-          = image_tag 'un-like.png'
+      = link_to post_like_path(post), class: 'hidden like-active', data: { method: 'delete' } do
+        = image_tag 'like.png'
+      = link_to post_like_path(post), class: 'hidden like-inactive', data: { method: 'post' } do
+        = image_tag 'un-like.png'
       = link_to new_post_comment_path(post), class: 'post__btn-comment' do
         = image_tag 'comment.png'
       = link_to image_tag('share.png'), 'https://twitter.com/share?'
