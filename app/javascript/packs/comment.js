@@ -4,6 +4,18 @@ import { csrfToken } from "rails-ujs";
 
 axios.defaults.headers.common["X-CSRF-Token"] = csrfToken();
 
+const appendNewComment = (comment) => {
+  $(".comment").append(
+    `<div class="comment__item">
+      <div class="comment__left">
+      </div>
+      <div class="comment__right">
+        <p class="comment__content">${comment.content}</p>
+      </div>
+    </div>`
+  );
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   const dataset = $("#post-show").data();
   const postId = dataset.postId;
@@ -11,15 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   axios.get(`/posts/${postId}/comments`).then((response) => {
     const comments = response.data;
     comments.forEach((comment) => {
-      $(".comment").append(
-        `<div class="comment__item">
-          <div class="comment__left">
-          </div>
-          <div class="comment__right">
-            <p class="comment__content">${comment.content}</p>
-          </div>
-        </div>`
-      );
+      appendNewComment(comment);
     });
 
     $(".js-add-comment-btn").on("click", () => {
@@ -33,15 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
           })
           .then((response) => {
             const comment = response.data;
-            $(".comment").append(
-              `<div class="comment__item">
-              <div class="comment__left">
-              </div>
-              <div class="comment__right">
-                <p class="comment__content">${comment.content}</p>
-              </div>
-            </div>`
-            );
+            appendNewComment(comment);
             $("#comment_content").val("");
           });
       }
