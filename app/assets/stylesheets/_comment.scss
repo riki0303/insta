@@ -24,3 +24,15 @@
   font-size: $font-size-md;
   color: $color-light-gray;
 }
+
+.comment__textarea-container {
+  position: relative;
+}
+
+.comment__btn {
+  height: 17px;
+  width: 17px;
+  position: absolute;
+  left: 15px;
+  top: 60px;
+}
