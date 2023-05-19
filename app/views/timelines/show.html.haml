@@ -6,7 +6,28 @@
       = link_to 'Home', root_path, class: 'head__link--blue'
 
   - @posts.each do |post|
-    = render 'commons/posts', post: post
+    .post__item
+      = link_to account_path(post.user) do
+        .post__item-head
+          = image_tag post.user.avatar_image, class: 'post__avatar'
+          .post__item-text-container
+            %p.post__account
+              = post.user.account
+            %p.post__created_at
+              = I18n.l(post.created_at, format: :default)
+      = link_to post_path(post.id) do
+        - post.eyecatches.each do |eyecatch|
+          .post__eyecatch-container
+            = image_tag eyecatch, class: 'post__eyecatch'
+      - if user_signed_in?
+        .post__btn-container
+          .like-inactive
+            = image_tag 'un-like.png'
+          = link_to new_post_comment_path(post), class: 'post__btn-comment' do
+            = image_tag 'comment.png'
+          = link_to image_tag('share.png'), 'https://twitter.com/share?'
+      %p.post__title
+        = post.title
 
   %br/
   %h2 Many liked posts
