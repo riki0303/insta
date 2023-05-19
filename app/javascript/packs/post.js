@@ -15,6 +15,8 @@ const handleLikeDisplay = (hasLiked) => {
 document.addEventListener("DOMContentLoaded", () => {
   const dataset = $("#post-show").data();
   const postId = dataset.postId;
+
+
   axios.get(`/posts/${postId}/like`).then((response) => {
     const hasLiked = response.data.hasLiked;
     handleLikeDisplay(hasLiked);
