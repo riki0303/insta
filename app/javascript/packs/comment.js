@@ -1,15 +1,14 @@
 import $ from "jquery";
-import axios from "axios";
-import { csrfToken } from "rails-ujs";
-
-axios.defaults.headers.common["X-CSRF-Token"] = csrfToken();
+import axios from "modules/axios";
 
 const appendNewComment = (comment) => {
   $(".comment").append(
     `<div class="comment__item">
       <div class="comment__left">
+        <img src="${comment.user_avatar}" class="comment__avatar"></img>
       </div>
       <div class="comment__right">
+        <div class = "comment__account">${comment.user_account}</>
         <p class="comment__content">${comment.content}</p>
       </div>
     </div>`

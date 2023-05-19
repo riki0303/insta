@@ -7,4 +7,16 @@
 
   = render 'commons/posts', post: @post
 
+  .comment
+    - @comments.each do |comment|
+      .comment__item
+        .comment__left
+          = link_to account_path(comment.user_id) do
+            = image_tag comment.user.avatar_image, class: 'comment__avatar'
+        .comment__right
+          = link_to account_path(comment.user_id), class: 'comment__account' do
+            = comment.user.account
+          %p.comment__content
+            = comment.content
+
 = javascript_pack_tag 'post'
