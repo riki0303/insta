@@ -1,3 +1,5 @@
+-# 下記１行js用
+.post#post-show{data: {post_id: @post.id}}
 .container.form
   .head
     .head__item
@@ -12,22 +14,29 @@
       %li= message
 
   .comment
-    - @comments.each do |comment|
-      -# 投稿用にbuildされた空のコメントを表示しないように条件分岐
-      - unless comment.content.nil?
-        .comment__item
-          .comment__left
-            = link_to account_path(comment.user_id) do
-              = image_tag comment.user.avatar_image, class: 'comment__avatar'
-          .comment__right
-            = link_to account_path(comment.user_id), class: 'comment__account' do
-              = comment.user.account
-            %p.comment__content
-              = comment.content
+    -# - @comments.each do |comment|
+    -#   -# 投稿用にbuildされた空のコメントを表示しないように条件分岐
+    -#   - unless comment.content.nil?
+    -#     .comment__item
+    -#       .comment__left
+    -#         = link_to account_path(comment.user_id) do
+    -#           = image_tag comment.user.avatar_image, class: 'comment__avatar'
+    -#       .comment__right
+    -#         = link_to account_path(comment.user_id), class: 'comment__account' do
+    -#           = comment.user.account
+    -#         %p.comment__content
+    -#           = comment.content
 
 
-  = form_with(model: @comment, url: post_comments_path(@comment.post), local: true) do |f|
-    %div
-      = f.text_area :content, class: 'form__textarea'
-      .form__btn
-        = f.submit "CREATE COMMENT", class: 'form__btn-text'
+  = text_area_tag :comment_content, '', class: 'form__textarea'
+
+
+  .form__btn.js-add-comment-btn
+    %p.form__btn-text CREATE COMMENT
+  -# = form_with(model: @comment, url: post_commets_path(@comment.post), local: true) do |f|
+  -#   %div
+  -#     = f.text_area :content, class: 'form__textarea'
+  -#     .form__btn
+  -#       = f.submit "CREATE COMMENT", class: 'form__btn-text'
+
+= javascript_pack_tag 'post'
