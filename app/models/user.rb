@@ -64,6 +64,7 @@ class User < ApplicationRecord
     following_relationships.exists?(following_id: user.id)
   end
 
+
   # 以下はuserインスタンスから呼び出せない
   private
 
