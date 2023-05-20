@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   axios.get(`/accounts/${userId}/follow`).then((response) => {
     const hasFollowed = response.data.hasFollowed;
-
     if (hasFollowed) {
       $(".js-unfollow-text").removeClass("hidden");
     } else {
