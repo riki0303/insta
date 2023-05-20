@@ -1,0 +1,10 @@
+@import "variable";
+
+.js-follow-text,
+.js-unfollow-text {
+  color: $color-light-gray;
+}
+
+.js-follow-text:hover {
+  opacity: 0.7;
+}
