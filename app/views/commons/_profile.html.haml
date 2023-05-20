@@ -18,10 +18,6 @@
           Unfollow
         %p.js-follow-text.hidden
           Follow
-        -# - if current_user&.has_followed?(user)
-        -#   = link_to 'Unfollow', account_unfollows_path(user), data: {method: 'post'}
-        -# - else
-        -#   = link_to 'Follow', account_follows_path(user), data: {method: 'post'}
   .profile__my-image-container
     = image_tag user.avatar_image, class: 'profile__my-image'
     - if user == current_user

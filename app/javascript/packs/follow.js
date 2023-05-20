@@ -7,10 +7,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   axios.get(`/accounts/${userId}/follow`).then((response) => {
     const hasFollowed = response.data.hasFollowed;
+
     if (hasFollowed) {
       $(".js-unfollow-text").removeClass("hidden");
     } else {
       $(".js-follow-text").removeClass("hidden");
     }
+  });
+
+  $(".js-follow-text").on("click", () => {
+    axios.post(`/accounts/${userId}/follow`).then((response) => {
+      if (response.data.status === "ok") {
+        $(".js-follow-text").addClass("hidden");
+        $(".js-unfollow-text").removeClass("hidden");
+      }
+    });
+  });
+
+  $(".js-unfollow-text").on("click", () => {
+    axios.post(`/accounts/${userId}/unfollow`).then((response) => {
+      if (response.data.status === "ok") {
+        $(".js-unfollow-text").addClass("hidden");
+        $(".js-follow-text").removeClass("hidden");
+      }
+    });
   });
 });
