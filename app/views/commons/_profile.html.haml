@@ -1,3 +1,5 @@
+-# 以下1行はfollow.js用
+.account#account-show{data: {user_id: @user.id}}
 .container.container--mt
   .head
     .head__item
@@ -12,10 +14,10 @@
       - if user == current_user
         = link_to 'Logout', destroy_user_session_path
       - else
-        - if current_user&.has_followed?(user)
-          = link_to 'Unfollow', account_unfollows_path(user), data: {method: 'post'}
-        - else
-          = link_to 'Follow', account_follows_path(user), data: {method: 'post'}
+        %p.js-unfollow-text.hidden
+          Unfollow
+        %p.js-follow-text.hidden
+          Follow
   .profile__my-image-container
     = image_tag user.avatar_image, class: 'profile__my-image'
     - if user == current_user
@@ -42,13 +44,6 @@
       = link_to post_path(post) do
         = image_tag post.eyecatches[0], class: 'profile__post'
 
-    -# = image_tag 'post-1.png' , class: 'profile__post'
-    -# = image_tag 'post-2.png' , class: 'profile__post'
-    -# = image_tag 'post-3.png' , class: 'profile__post'
-    -# = image_tag 'post-1.png' , class: 'profile__post'
-    -# = image_tag 'post-2.png' , class: 'profile__post'
-    -# = image_tag 'post-3.png' , class: 'profile__post'
 
 
-
-
+= javascript_pack_tag 'follow'

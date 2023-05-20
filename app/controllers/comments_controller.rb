@@ -7,14 +7,13 @@ class CommentsController < ApplicationController
     render json: comments
   end
 
-
   def new
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build
-  #   @comment.user_id = current_user.id
-  #   # コメント一覧表示用
-  #   @comments = @post.comments
-   end
+    #   @comment.user_id = current_user.id
+    #   # コメント一覧表示用
+    #   @comments = @post.comments
+  end
 
   def create
     @post = Post.find(params[:post_id])
