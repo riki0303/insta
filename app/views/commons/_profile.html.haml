@@ -1,5 +1,5 @@
 -# 以下1行はfollow.js用
-.account#account-show{data: {user_id: @user.id}}
+.account#account-show{data: {user_id: @user.id, }}
 .container.container--mt
   .head
     .head__item
@@ -30,12 +30,12 @@
       %p.profile__parameter-name Posts
     = link_to account_followers_path(user) do
       .profile__parameter
-        .profile__parameter-number.profile__parameter-number--black.js-followers-count
-          = user.follower_relationships.count
+        .profile__parameter-number.profile__parameter-number--black.js-followers-number
+          -# = user.follower_relationships.count
         %p.profile__parameter-name Followers
     = link_to account_followings_path(user) do
       .profile__parameter
-        .profile__parameter-number.profile__parameter-number--black.js-following-count
+        .profile__parameter-number.profile__parameter-number--black.js-following-number
           = user.following_relationships.count
         %p.profile__parameter-name Following
 
