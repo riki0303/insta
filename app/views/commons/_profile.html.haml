@@ -1,5 +1,6 @@
--# 以下1行はfollow.js用
-.account#account-show{data: {user_id: @user.id, }}
+-# 以下はfollow.js用
+- unless(@profile)
+  .account#account-show{data: {user_id: @user.id, }}
 .container.container--mt
   .head
     .head__item
@@ -31,7 +32,9 @@
     = link_to account_followers_path(user) do
       .profile__parameter
         .profile__parameter-number.profile__parameter-number--black.js-followers-number
-          -# = user.follower_relationships.count
+          - if(@profile)
+            = user.follower_relationships.count
+          -# = 他人のプロフィールぺーじであれば、フォロワー数はAjaxで値追加
         %p.profile__parameter-name Followers
     = link_to account_followings_path(user) do
       .profile__parameter
