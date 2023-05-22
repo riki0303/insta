@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       $(".js-follow-text").removeClass("hidden");
     }
 
-
     const followersNumber = response.data.followersNumber;
     const appendFollowersNumber = () => {
       $(".js-followers-number").append(`<div>${followersNumber}</div>`);
@@ -27,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         $(".js-follow-text").addClass("hidden");
         $(".js-unfollow-text").removeClass("hidden");
       }
+
       const followersNumber = response.data.followersNumber;
       const htmlFollowersNumber = () => {
         $(".js-followers-number").html(`<div>${followersNumber}</div>`);
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         $(".js-unfollow-text").addClass("hidden");
         $(".js-follow-text").removeClass("hidden");
       }
+
       const followersNumber = response.data.followersNumber;
       const htmlFollowersNumber = () => {
         $(".js-followers-number").html(`<div>${followersNumber}</div>`);
