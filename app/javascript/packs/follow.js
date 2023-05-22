@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       $(".js-follow-text").removeClass("hidden");
     }
 
+
     const followersNumber = response.data.followersNumber;
     const appendFollowersNumber = () => {
       $(".js-followers-number").append(`<div>${followersNumber}</div>`);
