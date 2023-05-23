@@ -1,0 +1,3 @@
+class CommentMailer < ApplicationMailer
+  
+end
