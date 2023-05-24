@@ -6,12 +6,12 @@ const appendNewComment = (comment) => {
     `<div class= "comment__item">
       <div class= "comment__left">
         <a class = "comment__avatar-container" href= "/accounts/${comment.user_id}">
-          <img src="${comment.user_avatar}" class="comment__avatar"></img>
+          <img src="${comment.user_avatar}" class="comment__avatar" alt="User Avatar"></img>
         </a>
       </div>
       <div class= "comment__right">
         <a class = "comment__account" href= "/accounts/${comment.user_id}">
-          <div class = "comment__account">${comment.user_account}</>
+          <div class = "comment__account">${comment.user_account}</div>
         </a>
         <p class= "comment__content">${comment.content}</p>
       </div>
