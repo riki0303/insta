@@ -28,6 +28,6 @@ class Comment < ApplicationRecord
 
   private
   def send_email
-    CommentMailer.new_comment(user).deliver_now
+    CommentMailer.new_comment(user).deliver_later
   end
 end
