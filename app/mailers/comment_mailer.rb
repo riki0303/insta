@@ -1,7 +1,8 @@
 class CommentMailer < ApplicationMailer
-  def new_comment(user)
+  def mention_notification(user, comment)
     @user = user
-    mail to: user.email, subject: '【新しいコメント】'
+    @comment = comment
+    mail to: user.email, subject: "メンションのお知らせ"
   end
 end
 
