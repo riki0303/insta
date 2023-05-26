@@ -24,10 +24,21 @@ class Comment < ApplicationRecord
 
   validates :content, presence: true
 
-  after_create :send_email
+  after_create :send_mention_emails
+
 
   private
-  def send_email
-    CommentMailer.new_comment(user).deliver_now
+
+  def find_mentioned_users
+    mentioned_accounts = content.scan(/@(\w+)/).flatten
+    User.where(account: mentioned_accounts)
+  end
+
+  def send_mention_emails
+    users = find_mentioned_users
+
+    users.each do |user|
+      CommentMailer.mention_notification(user, content).deliver_later
+    end
   end
 end
