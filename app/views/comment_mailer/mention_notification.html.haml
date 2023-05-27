@@ -1,4 +1,4 @@
 %p #{@user.email}さん
-%p 下記コメントでメンションされました。
+%p #{@comment.user.account}さんに下記コメントでメンションされました。
 %br/
-%p #{@comment}
+%p #{@comment.content}
