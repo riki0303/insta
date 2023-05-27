@@ -29,13 +29,13 @@ class Comment < ApplicationRecord
 
   private
 
-  def find_mentioned_users
+  def mentioned_users
     mentioned_accounts = content.scan(/@(\w+)/).flatten
     User.where(account: mentioned_accounts)
   end
 
   def send_mention_emails
-    users = find_mentioned_users
+    users = mentioned_users
 
     users.each do |user|
       CommentMailer.mention_notification(user, content).deliver_later
