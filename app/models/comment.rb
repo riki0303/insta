@@ -38,7 +38,7 @@ class Comment < ApplicationRecord
     users = mentioned_users
 
     users.each do |user|
-      CommentMailer.mention_notification(user, content).deliver_later
+      CommentMailer.mention_notification(user, self).deliver_later
     end
   end
 end
