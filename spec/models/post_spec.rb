@@ -5,11 +5,7 @@ RSpec.describe Post, type: :model do
   let!(:user) { create(:user) }
 
   context 'タイトルが入力されてる場合' do
-    let!(:post) do
-      user.posts.build({
-        title: Faker::Lorem.characters(number: 10)
-      })
-    end
+    let!(:post) { build(:post, user: user) }
 
     it '記事を保存出来る' do
       expect(post).to be_valid
@@ -18,10 +14,10 @@ RSpec.describe Post, type: :model do
 
 
   context 'タイトルが入力されていない場合' do
-    let!(:post) do
-      user.posts.create({
-        title: ''
-      })
+    let!(:post) { build(:post, title: '', user: user)}
+
+    before do
+      post.save
     end
 
     it '記事を保存出来ない' do
