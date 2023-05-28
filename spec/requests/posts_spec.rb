@@ -25,6 +25,14 @@ RSpec.describe 'Posts', type: :request do
         expect(Post.last.title).to eq(post_params[:title])
       end
     end
+
+    context 'ログインしていない場合' do
+      it 'ログイン画面に遷移する' do
+        post_params = attributes_for(:post)
+        post posts_path({post: post_params})
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
   end
 end
 
