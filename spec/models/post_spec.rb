@@ -1,13 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  let!(:user) do
-    user = User.create! ({
-    email: 'test@example.com',
-    password: 'password',
-    account: 'account'
-    })
-  end
+  # :userはfactorybotにより定義
+  let!(:user) { create(:user) }
 
   context 'タイトルが入力されてる場合' do
     let!(:post) do
@@ -31,7 +26,6 @@ RSpec.describe Post, type: :model do
 
     it '記事を保存出来ない' do
       expect(post.errors.messages[:title][0]).to eq('を入力してください')
-      
     end
   end
 end
