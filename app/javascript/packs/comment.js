@@ -1,8 +1,8 @@
-import $ from "jquery";
-import axios from "modules/axios";
+import $ from 'jquery';
+import axios from 'modules/axios';
 
 const appendNewComment = (comment) => {
-  $(".comment").append(
+  $('.comment').append(
     `<div class= "comment__item">
       <div class= "comment__left">
         <a class = "comment__avatar-container" href= "/accounts/${comment.user_id}">
@@ -19,8 +19,8 @@ const appendNewComment = (comment) => {
   );
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  const dataset = $("#post-show").data();
+document.addEventListener('DOMContentLoaded', () => {
+  const dataset = $('#post-show').data();
   const postId = dataset.postId;
 
   axios.get(`/posts/${postId}/comments`).then((response) => {
@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
       appendNewComment(comment);
     });
 
-    $(".js-add-comment-btn").on("click", () => {
-      const content = $("#comment_content").val();
+    $('.js-add-comment-btn').on('click', () => {
+      const content = $('#comment_content').val();
       if (!content) {
-        window.alert("コメントを入力してください");
+        window.alert('コメントを入力してください');
       } else {
         axios
           .post(`/posts/${postId}/comments`, {
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((response) => {
             const comment = response.data;
             appendNewComment(comment);
-            $("#comment_content").val("");
+            $('#comment_content').val('');
           });
       }
     });
