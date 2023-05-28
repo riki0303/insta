@@ -38,8 +38,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-byebug'
-  gem 'rubocop-rails'
   gem 'rspec-rails'
+  gem 'rubocop-rails'
 end
 
 group :development do
@@ -50,10 +50,10 @@ group :development do
   gem 'annotate'
   gem 'erb2haml'
   gem 'faker'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener'
   gem 'letter_opener_web', '~> 1.0'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :test do
