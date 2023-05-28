@@ -40,6 +40,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'rubocop-rails'
+  gem 'faker'
 end
 
 group :development do
@@ -49,7 +50,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'annotate'
   gem 'erb2haml'
-  gem 'faker'
   gem 'letter_opener'
   gem 'letter_opener_web', '~> 1.0'
   gem 'spring'
