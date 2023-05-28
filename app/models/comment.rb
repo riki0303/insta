@@ -26,7 +26,6 @@ class Comment < ApplicationRecord
 
   after_create :send_mention_emails
 
-
   private
 
   def mentioned_users
