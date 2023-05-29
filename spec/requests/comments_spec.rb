@@ -11,13 +11,14 @@ RSpec.describe 'Comments', type: :request do
         sign_in user
       end
       it '200 Status' do
-        get post_comments_path(post_id: post.id)
+        get new_post_comment_path(post_id: post.id)
         expect(response).to have_http_status(200)
+        binding.pry
       end
     end
 
     context 'ログインしていない場合' do
-      it '200 Status' do
+      it 'ログイン画面へリダイレクト' do
         get post_comments_path(post_id: post.id)
         expect(response).to redirect_to(new_user_session_path)
       end
