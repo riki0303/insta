@@ -10,8 +10,7 @@ RSpec.describe 'Profile', type: :system do
 
     it '自分のプロフィールページを表示出来る' do
       visit profile_path
-      expect(page).to have_css('.profile__name', text: user.profile.name )
+      expect(page).to have_css('.profile__name', text: user.profile.name)
     end
   end
-
 end
