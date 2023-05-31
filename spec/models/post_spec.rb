@@ -12,9 +12,8 @@ RSpec.describe Post, type: :model do
     end
   end
 
-
   context 'タイトルが入力されていない場合' do
-    let!(:post) { build(:post, title: '', user: user)}
+    let!(:post) { build(:post, title: '', user: user) }
 
     before do
       post.save
