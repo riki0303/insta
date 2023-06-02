@@ -1,0 +1,17 @@
+{
+  "name": "insta app",
+  "description": "This is instaapp",
+  "keywords": [],
+  "website": "",
+  "repository": "https://github.com/riki0303/insta",
+  "env": {},
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
