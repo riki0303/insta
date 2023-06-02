@@ -1,6 +1,6 @@
 -# 以下はfollow.js用
 -# 自分以外のページであればフォロワー数を非同期的に更新
-- unless @profile
+- if @profile.nil?
   .account#account-show{data: {user_id: @user.id, }}
 
 .container.container--mt
