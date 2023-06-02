@@ -1,7 +1,7 @@
 -# 以下はfollow.js用
--# 自分以外のページであればフォロワー数を非同期的に更新
-- if @profile.nil?
-  .account#account-show{data: {user_id: @user.id, }}
+-# 他人のｓページであればフォロワー数を非同期的に更新
+- if current_page?(account_path(user))
+  .account#account-show{data: {user_id: user.id, }}
 
 .container.container--mt
   .head
@@ -34,7 +34,7 @@
     = link_to account_followers_path(user) do
       .profile__parameter
         .profile__parameter-number.profile__parameter-number--black.js-followers-number
-          - if(@profile)
+          - if current_page?(profile_path)
             = user.follower_relationships.count
           -# = 他人のプロフィールぺーじであれば、フォロワー数はAjaxで値追加
         %p.profile__parameter-name Followers
