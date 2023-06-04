@@ -31,6 +31,7 @@ gem 'binding_of_caller'
 gem 'devise'
 gem 'hamlit'
 gem 'sidekiq'
+gem 'activestorage-validator'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
