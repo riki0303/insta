@@ -1,10 +1,16 @@
 .container.container--mt
-  = link_to :back do
-    %span.arrow-left
-  %p.profile__name
-    = @profile.name
-  %p.profile__account
-    (#{current_user.account})
+  .head
+    .head__item
+      = link_to :back do
+        %span.arrow-left
+    .head__item
+      %p.profile__name
+        = @profile.name
+      %p.profile__account
+        (#{current_user.account})
+    -# 以下空タグ
+    .head__item
+
   .profile__my-image-container
     - if @profile&.avatar&.attached?
       = image_tag @profile.avatar, class: 'profile__my-image'
