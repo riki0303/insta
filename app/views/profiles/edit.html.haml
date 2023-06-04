@@ -1,14 +1,7 @@
 .form
+  .form__image-container
+    = image_tag 'login.png', class: 'form__image'
   .container
-    .head
-      .head__item
-        = link_to :back do
-          %span.arrow-left
-      .head__item
-        %h2.head__title
-          Edit
-      -# 以下空タグ
-      .head__item
     %ul
       - @profile.errors.full_messages.each do |message|
         %li= message
@@ -18,9 +11,9 @@
         %br/
         = f.text_field :name, autofocus: true, autocomplete: "account", class: 'form__input'
       .field.form__item
-        .form__file-btn
-          %p avatar
-          = f.file_field :avatar
+        = f.label :avatar, 'avatar', class: 'form__item-name'
+        %br/
+        = f.file_field :avatar, class: 'form__input'
         %br/
       .form__btn
-        = f.submit "update", class: 'form__btn-text'
+        = f.submit "submit", class: 'form__btn-text'
