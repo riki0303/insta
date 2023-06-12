@@ -13,22 +13,22 @@
  *= require_tree .
  *= require_self
  */
-@import "reset";
-@import "variable";
-@import "form";
-@import "flash";
-@import "profile";
-@import "arrow";
-@import "post";
-@import "comment";
-@import "animate";
-@import "js";
+@import 'reset';
+@import 'variable';
+@import 'form';
+@import 'flash';
+@import 'profile';
+@import 'arrow';
+@import 'post';
+@import 'comment';
+@import 'animate';
+@import 'js';
 
 body {
   font-weight: normal;
   line-height: 1.5;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: $color-black;
 }
 
